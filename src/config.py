@@ -64,8 +64,10 @@ SUPPORTED_LLM_CHANNEL_PROTOCOLS = ("openai", "anthropic", "gemini", "vertex_ai",
 _FALSEY_ENV_VALUES = {"0", "false", "no", "off"}
 # Fallback defaults used when ANSPIRE_API_KEYS is reused as legacy OpenAI-compatible source.
 # These are compatibility examples; actual availability should be validated by Anspire console/model entitlement.
-ANSPIRE_LLM_BASE_URL_DEFAULT = "https://open-gateway.anspire.cn/v6"
-ANSPIRE_LLM_MODEL_DEFAULT = "Doubao-Seed-2.0-lite"
+#ANSPIRE_LLM_BASE_URL_DEFAULT = "https://open-gateway.anspire.cn/v6"
+#ANSPIRE_LLM_MODEL_DEFAULT = "Doubao-Seed-2.0-lite"
+ANSPIRE_LLM_BASE_URL_DEFAULT = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+ANSPIRE_LLM_MODEL_DEFAULT = "qwen-plus"
 
 
 def _has_ntfy_topic_endpoint(value: Optional[str]) -> bool:
@@ -680,7 +682,8 @@ class Config:
     # OpenAI 兼容 API（备选，当 Gemini/Anthropic 不可用时使用）
     openai_api_key: Optional[str] = None
     openai_base_url: Optional[str] = None  # 如: https://api.openai.com/v1
-    openai_model: str = "gpt-5.5"  # OpenAI 兼容模型名称
+    #openai_model: str = "gpt-5.5"  # OpenAI 兼容模型名称
+    ANSPIRE_LLM_MODEL_DEFAULT = "qwen-plus"
     openai_vision_model: Optional[str] = None  # Deprecated: use VISION_MODEL instead
     openai_temperature: float = 0.7  # OpenAI 温度参数（0.0-2.0，默认0.7）
 
