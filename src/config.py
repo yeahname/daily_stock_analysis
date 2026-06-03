@@ -683,7 +683,8 @@ class Config:
     openai_api_key: Optional[str] = None
     openai_base_url: Optional[str] = None  # 如: https://api.openai.com/v1
     #openai_model: str = "gpt-5.5"  # OpenAI 兼容模型名称
-    ANSPIRE_LLM_MODEL_DEFAULT = "qwen-plus"
+    #ANSPIRE_LLM_MODEL_DEFAULT = "qwen-plus"
+    openai_model: str = "qwen-plus"
     openai_vision_model: Optional[str] = None  # Deprecated: use VISION_MODEL instead
     openai_temperature: float = 0.7  # OpenAI 温度参数（0.0-2.0，默认0.7）
 
